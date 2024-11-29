@@ -2,8 +2,6 @@
 
 import pytesseract
 from pytesseract import Output
-from PIL import Image
-import numpy as np
 import cv2
 import boxDraw
 import re
@@ -28,13 +26,13 @@ for i in range(0,max):
     if imgInfo['conf'][i] >30:
 
         if re.match(date_pattern,text):
-            x,y,w,h = boxDraw.boxDraw(imgInfo,img,i,5,(233,22,22))
+            x,y,w,h = boxDraw.boxDraw(imgInfo,img,i,thick=-1,color=(230,10,230))
             print(text)
-            cv2.putText(img=img,text=text,org=(x,y-2),fontFace=cv2.FONT_HERSHEY_COMPLEX_SMALL,fontScale=0.5,color=(211,10,30))
+            cv2.putText(img=img,text=text,org=(x,y-2),fontFace=cv2.FONT_HERSHEY_COMPLEX_SMALL,fontScale=0.5,color=(11,10,230)) #puts a box for date detected
             continue
 
-        x,y,w,h = boxDraw.boxDraw(imgInfo,img,i)
-        cv2.putText(img=img,text=text,org=(x,y-2),fontFace=cv2.FONT_HERSHEY_COMPLEX_SMALL,fontScale=0.7,color=(0,150,230)) #overhead text for recog nised characters/words
+        x,y,w,h = boxDraw.boxDraw(imgInfo,img,i,2,(0,230,22))
+        cv2.putText(img=img,text=text,org=(x,y-2),fontFace=cv2.FONT_HERSHEY_COMPLEX_SMALL,fontScale=0.7,color=(230,50,30)) #overhead text for recognised characters/words
   
 cv2.imshow("FRAME",img) 
 
