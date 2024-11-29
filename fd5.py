@@ -1,4 +1,4 @@
-# Image capture
+# Image capture CLICKS PHOTO
 import cv2
 import numpy as np
 import math
