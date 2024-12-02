@@ -1,3 +1,5 @@
+# NOTE image scaling/downisizing 
+# InterCubic good for enlargening images and InterArea good for downscaling 
 import cv2
 import numpy as np
 
