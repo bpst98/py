@@ -3,3 +3,5 @@ haarcascade_eye.xml
 haarcascade_frontalface_default.xml
 pics/
 .idea/
+customOCR/alfabeto_A-Z.zip
+customOCR/A_Z Handwritten Data.csv

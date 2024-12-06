@@ -16,9 +16,18 @@ print(train_data.shape, test_data.shape)
 print(train_labels.shape,test_labels.shape)
 
 digits_data = np.vstack([train_data,test_data])
-digits_label = np.htstack([train_labels,test_labels])
+digits_label = np.hstack([train_labels,test_labels])
+
+digits_data.shape
+digits_label.shape
 
 
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+randomIndex = np.random.randint(0,digits_data.shape[0])
+plt.imshow(digits_data[randomIndex],cmap='gray')
+plt.title('CLASS:'+str(digits_label[randomIndex]))
+
+sns.countplot(x=digits_label[:1000]) 
+
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
 
